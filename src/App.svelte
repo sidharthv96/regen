@@ -2,7 +2,7 @@
 	import RandExp from 'randexp';
 	export let name: string;
 	let regex: string = '(1[0-2]|0[1-9])(:[0-5][0-9]){2} (A|P)M';
-	let data: string = ''
+	let data: string = '';
 	let count: number = 10;
 	let error: boolean = false;
 	$: {
@@ -12,11 +12,11 @@
 			for (let i = 0; i < count; i++) {
 				text.push(randexp.gen());
 			}
-			data = text.join("\n")
+			data = text.join('\n');
 			error = false;
 		} catch {
 			error = true;
-			data = 'Bad Regex :('
+			data = 'Bad Regex :(';
 		}
 	}
 </script>
