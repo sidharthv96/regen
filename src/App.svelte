@@ -6,6 +6,11 @@
 	let count: number = 10;
 	let error: boolean = false;
 	$: {
+		if (count === 50) {
+			if(confirm('How about we take a look at the author?')){
+				window.location.href = 'https://www.sidharth.dev/about';
+			}
+		}
 		try {
 			const text = [];
 			const randexp = new RandExp(regex);
@@ -26,9 +31,9 @@
 	<input bind:value={regex} placeholder="Enter Regex">
 	{#if !error}
 		<label>
-			<input type=range bind:value={count} min=0 max=50>
+			<input type=range bind:value={count} min=1 max=50>
 			<br>
-			{count} strings coming right up!
+			{count} string{count > 1 ? 's': ''} coming right up!
 		</label>
 	{/if}
 	<pre>{data}</pre>
