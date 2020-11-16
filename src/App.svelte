@@ -1,9 +1,9 @@
 <script lang="ts">
 	import RandExp from 'randexp';
 	export let name: string;
-	let regex: string = '[-+]?[0-9]{1,16}[.][0-9]{1,6}';
+	let regex: string = '(1[0-2]|0[1-9])(:[0-5][0-9]){2} (A|P)M';
 	let data: string = ''
-	let count: number = 5;
+	let count: number = 10;
 	let error: boolean = false;
 	$: {
 		try {
